@@ -1,0 +1,156 @@
+
+@keyframes pacmanMove {
+    0%{
+        top: 0;
+        left: 0;
+
+    }
+    25%{
+        top: 0;
+        right: 0;
+        transform: translateX(90vw);
+        background-color: darkred;
+    }
+
+    35%{
+        right: 10vh;
+        bottom: 50vh;
+        transform: translateX(9vh);
+
+    }
+    50%{
+        bottom: 0;
+        right: 0; 
+        transform: translate(90vw,80vw);
+        background-color: chartreuse;
+
+    }
+    75%{
+        bottom: 0;
+        left: 0;
+        background-color: coral;
+        transform: translateY(90vH);
+    }
+    35%{
+        right: 10vh;
+        bottom: 50vh;
+        transform: translateX(9vh);
+
+    }
+    100%{
+        top: 0;
+        left: 0;
+       
+    }
+
+}
+@keyframes bounceTop{
+    
+
+        0% {
+          -webkit-transform: translateY(-45px);
+                  transform: translateY(-45px);
+          -webkit-animation-timing-function: ease-in;
+                  animation-timing-function: ease-in;
+          opacity: 1;
+        }
+        24% {
+          opacity: 1;
+        }
+        40% {
+          -webkit-transform: translateY(-24px);
+                  transform: translateY(-24px);
+          -webkit-animation-timing-function: ease-in;
+                  animation-timing-function: ease-in;
+        }
+        65% {
+          -webkit-transform: translateY(-12px);
+                  transform: translateY(-12px);
+          -webkit-animation-timing-function: ease-in;
+                  animation-timing-function: ease-in;
+        }
+        82% {
+          -webkit-transform: translateY(-6px);
+                  transform: translateY(-6px);
+          -webkit-animation-timing-function: ease-in;
+                  animation-timing-function: ease-in;
+        }
+        93% {
+          -webkit-transform: translateY(-4px);
+                  transform: translateY(-4px);
+          -webkit-animation-timing-function: ease-in;
+                  animation-timing-function: ease-in;
+        }
+        25%,
+        55%,
+        75%,
+        87% {
+          -webkit-transform: translateY(0px);
+                  transform: translateY(0px);
+          -webkit-animation-timing-function: ease-out;
+                  animation-timing-function: ease-out;
+        }
+        100% {
+          -webkit-transform: translateY(0px);
+                  transform: translateY(0px);
+          -webkit-animation-timing-function: ease-out;
+                  animation-timing-function: ease-out;
+          opacity: 1;
+        }
+      
+      
+}
+
+body{
+
+margin: 0%;
+}
+
+#parent{
+    background-color: blue;
+    height: 100vh;
+    top: 0;
+    left: 0;
+
+    border: 0 solid rgb(130, 238, 144);
+    transition-property: all;
+    /* transition-property: background-color, border; */
+    transition-duration: 3s;
+    transition-delay: 8s; 
+    /* transition: all 2s; */
+    /* raccourci pour tout ce qu'il ya a au dessus sauf le delay */ 
+    position: relative;
+
+}
+
+#parent:hover{
+    background-color: red;
+    border: 1rem solid rgb(238, 37, 238); 
+}
+
+
+#enfant1{
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    border-radius: 100%;
+    position: absolute;
+    animation-name: pacmanMove;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+}
+#enfant2{
+    width: 100px;
+    height: 100px;
+    background-color: cadetblue;
+    position: absolute;
+    border-radius: 50%;
+    top: 25%;
+    left: 25%;
+    
+}
+#enfant2:hover{
+    -webkit-animation: bounceTop 0.9s both;
+    animation: bounceTop 0.9s both;
+}
+
